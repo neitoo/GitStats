@@ -1,0 +1,126 @@
+$black: #000;
+$b-purple: #5b4a7d;
+$rose: #ff98ff;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap');
+
+
+body{
+    background-color: rgb(233, 213, 213);
+    font-family: 'Inter', sans-serif;
+}
+.content{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .bg{
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+
+        .start-bg{
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background-image: url('/source/start-bg.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 10% 100%;
+        }
+        .end-bg{
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background-image: url('/source/end-bg.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right 150% bottom 90%;
+            transform: scaleX(-1);
+        }
+    }
+    
+
+    .gradient{
+        height: 5vw;
+        width: 100%;
+        background: linear-gradient(to bottom,$b-purple ,$black );
+    }
+
+    .logo{
+        width: 15vh;
+        border-radius: 50%;
+    }
+
+    .name-site{
+        color: white;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 5px;
+    }
+
+    .intro{
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 5px;
+        background: linear-gradient(150deg,white,$rose);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .button-container{
+        display: flex;
+        background-color: black;
+        border: 1px solid #1f1f1f;
+        border-radius: 20px;
+        margin-top: 8vh;
+        padding: 0 50px 0 50px;
+
+        a{
+            text-decoration: none;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 50px;
+            overflow: hidden;
+
+            p{
+                color: white;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                z-index: 2;
+            }
+
+            .rounded-effect{
+                width: 80%;
+                height: 50px;
+                background-color: #ffffff49;
+                position: absolute;
+                bottom: -70%;
+                border-radius: 50%;
+                filter: blur(20px);
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 0.3s;
+                z-index: 1;
+            }
+        }
+
+        a:hover{
+            .rounded-effect{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        
+    }
+}
+
